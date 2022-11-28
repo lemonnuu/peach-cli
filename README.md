@@ -72,3 +72,7 @@ NODE_ENV=devlopment
   "dev": "dotenv -- node index.js",
 }
 ```
+
+## eslint 配置好坑
+
+反正 eslint init 得到的配置死活不行, 不知道是不是 eslint 8 的问题, 不搞了。

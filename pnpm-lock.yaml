@@ -4,9 +4,11 @@ importers:
 
   .:
     specifiers:
+      prettier: ^2.8.0
       rimraf: ^3.0.2
       turbo: ^1.6.3
     devDependencies:
+      prettier: 2.8.0
       rimraf: 3.0.2
       turbo: 1.6.3
 
@@ -80,6 +82,12 @@ packages:
   /path-is-absolute/1.0.1:
     resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /prettier/2.8.0:
+    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /rimraf/3.0.2:

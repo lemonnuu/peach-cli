@@ -1,14 +1,11 @@
 {
   "name": "peach-cli",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "clean": "turbo run clean && rimraf node_modules",
-    "lint": "turbo run lint",
-    "build": "turbo run build",
-    "dev": "turbo run dev --no-cache --parallel --continue",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "prettier --write \"**/*.{js,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build --filter=docs^... && changeset publish"
@@ -17,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "prettier": "^2.8.0",
     "rimraf": "^3.0.2",
     "turbo": "^1.6.3"
   }
