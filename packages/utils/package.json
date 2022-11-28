@@ -1,8 +1,8 @@
 {
   "name": "@peach-cli/utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf .turbo && rimraf dist && rimraf node_modules"
   },
