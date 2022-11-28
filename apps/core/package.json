@@ -1,10 +1,13 @@
 {
   "name": "@peach-cli/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf .turbo && rimraf dist && rimraf node_modules"
+  },
+  "bin": {
+    "peach-cli": "bin/index.js"
   },
   "keywords": [],
   "author": "",
