@@ -1,18 +1,18 @@
 {
-  "name": "@peach-cli/utils",
-  "version": "0.0.1",
-  "description": "peach-cli utils",
-  "main": "lib/index.js",
+  "name": "@peach-cli/log",
+  "version": "0.0.0",
+  "description": "@peach-cli log",
+  "main": "lib/log.js",
   "scripts": {
     "clean": "rimraf .turbo && rimraf dist && rimraf node_modules"
   },
   "keywords": [],
   "author": "Mochi",
   "license": "ISC",
-  "devDependencies": {
-    "rimraf": "^3.0.2"
-  },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2"
   }
 }

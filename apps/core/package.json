@@ -1,7 +1,7 @@
 {
   "name": "@peach-cli/core",
   "version": "0.0.2",
-  "description": "",
+  "description": "peach-cli core",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf .turbo && rimraf dist && rimraf node_modules"
@@ -10,10 +10,15 @@
     "peach-cli": "bin/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mochi",
   "license": "ISC",
   "dependencies": {
-    "@peach-cli/utils": "workspace:*"
+    "@peach-cli/log": "workspace:*",
+    "@peach-cli/utils": "workspace:*",
+    "@peach-cli/last-version": "workspace:*",
+    "import-local": "^3.1.0",
+    "root-check": "1.0.0",
+    "semver": "^7.3.8"
   },
   "devDependencies": {
     "rimraf": "^3.0.2"
