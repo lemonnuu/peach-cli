@@ -46,3 +46,7 @@ axios.get('https://registry.npmjs.org/@peach-cli/core').then((res) => {
 解决办法就是将 Accept-Encoding 请求头去掉, 这样返回的内容就不会经过编码了。
 
 注：在 node 可以使用 [superagent](https://www.npmjs.com/package/superagent) 库, 没有此类问题。
+
+## commander
+
+commander 中 command 所属的 action 中参数 optionValues 只能拿到自己的, 如果是在全局注册是 option 是在其 `parent._optionValues` 里面。有一种好的做法是放缓存里边儿。

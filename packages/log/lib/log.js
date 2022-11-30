@@ -62,8 +62,9 @@ function generatorColor() {
   return [r, g, b]
 }
 
-function outputLog(HeadChalk, titleChalk, msgChalk, logName) {
+function outputLog(HeadChalk, titleChalk, msgChalk, logName, level = 2000) {
   return function (title, msg, config = {}) {
+    if (this.level > level) return
     let { head, closeIcon } = config
     if (head && typeof head === 'boolean') {
       head = logName
@@ -76,29 +77,31 @@ function outputLog(HeadChalk, titleChalk, msgChalk, logName) {
       msgChalk = msgChalk.rgb(...generatorColor())
     }
     if (closeIcon && !head) {
-      return console.log(`${titleChalk(title)}   ${msgChalk(msg)}`)
+      return console.log(`${titleChalk(title)}  ${msgChalk(msg)}`)
     }
     if (closeIcon && head) {
-      return console.log(`${HeadChalk(head)}   ${titleChalk(title)}   ${msgChalk(msg)}`)
+      return console.log(`${HeadChalk(head)}  ${titleChalk(title)}  ${msgChalk(msg)}`)
     }
     if (!closeIcon && !head) {
-      return console.log(`${icon}   ${titleChalk(title)}   ${msgChalk(msg)}`)
+      return console.log(`${icon} ${titleChalk(title)}  ${msgChalk(msg)}`)
     }
-    return console.log(`${icon}   ${HeadChalk(head)}   ${titleChalk(title)}   ${msgChalk(msg)}`)
+    return console.log(`${icon} ${HeadChalk(head)}  ${titleChalk(title)}  ${msgChalk(msg)}`)
   }
 }
 
-log.addLog = function (logName, headStyle, titleStyle, msgStyle) {
+log.addLog = function (logName, headStyle, titleStyle, msgStyle, level) {
   const HeadChalk = generatorChalk(headStyle)
   const titleChalk = generatorChalk(titleStyle)
   const msgChalk = generatorChalk(msgStyle)
-  this[logName] = outputLog(HeadChalk, titleChalk, msgChalk, logName)
+  this[logName] = outputLog(HeadChalk, titleChalk, msgChalk, logName, level)
 }
 
 const configFiles = fs.readdirSync(path.resolve(__dirname, '../config'))
 configFiles.forEach((file) => {
   const config = require(path.resolve(__dirname, `../config/${file}`))
-  log.addLog(file.split('.')[0], config.headStyle, config.titleStyle, config.msgStyle)
+  log.addLog(file.split('.')[0], config.headStyle, config.titleStyle, config.msgStyle, config.level)
 })
+
+log.level = 2000
 
 module.exports = log

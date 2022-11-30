@@ -48,3 +48,21 @@ npmlog 库就是可以用来打印日志的, 也有颜色。但是还是用 chal
 npm 暴露了一个 GET API 可以获取包的所有信息, 诸如这样的：`https://registry.npmjs.org/@peach-cli/core`。
 
 taobao 源也暴露了一个一样的 API：`https://registry.npmmirror.com/@peach-cli/core`。
+
+### 命令实现逻辑
+
+Peach-cli 和普通的脚手架有一丢丢区别, 普通的脚手架都是将所有的 command 注册在包的内部。Peach-cli 更像是一个中台 cli, 它要通过 `peach-cli init <cli-command>` 去手动注册一下命令。
+
+这样做的好处是：
+
+1. 可用分包处理, 将 command 拆解, 按需引入 command
+2. peach-cli 更像是一个中台 cli
+
+但是, cli-mammand 存哪是个问题,
+
+一：本地开发
+二：缓存？实际就下载的本地目录, 说什么缓存缓存
+
+#### pkg-dir
+
+可以获取到 package.json 所在目录

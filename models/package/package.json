@@ -1,0 +1,24 @@
+{
+  "name": "@peach-cli/package",
+  "version": "0.0.0",
+  "description": "@peach-cli model Package",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf .turbo && rimraf dist && rimraf node_modules"
+  },
+  "keywords": [],
+  "author": "Mochi",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@peach-cli/format-path": "workspace:*",
+    "@peach-cli/last-version": "workspace:*",
+    "@peach-cli/utils": "workspace:*",
+    "fs-extra": "^11.1.0",
+    "npminstall": "^6.6.2",
+    "path-exists": "^4.0.0",
+    "pkg-dir": "^5.0.0"
+  }
+}

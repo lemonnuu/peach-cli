@@ -1,0 +1,19 @@
+{
+  "name": "@peach-cli/exec",
+  "version": "0.0.0",
+  "description": "@peach-cli execute",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf .turbo && rimraf dist && rimraf node_modules"
+  },
+  "keywords": [],
+  "author": "Mochi",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@peach-cli/package": "workspace:*",
+    "@peach-cli/log": "workspace:*"
+  }
+}

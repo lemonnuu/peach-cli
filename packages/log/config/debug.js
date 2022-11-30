@@ -11,4 +11,4 @@ const titleStyle = {
 
 const msgStyle = {}
 
-module.exports = { headStyle, titleStyle, msgStyle }
+module.exports = { headStyle, titleStyle, msgStyle, level: 1000 }

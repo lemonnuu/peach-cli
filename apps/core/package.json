@@ -13,9 +13,11 @@
   "author": "Mochi",
   "license": "ISC",
   "dependencies": {
+    "@peach-cli/exec": "workspace:*",
+    "@peach-cli/last-version": "workspace:*",
     "@peach-cli/log": "workspace:*",
     "@peach-cli/utils": "workspace:*",
-    "@peach-cli/last-version": "workspace:*",
+    "commander": "^9.4.1",
     "import-local": "^3.1.0",
     "root-check": "1.0.0",
     "semver": "^7.3.8"
