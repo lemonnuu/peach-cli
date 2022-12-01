@@ -50,3 +50,9 @@ axios.get('https://registry.npmjs.org/@peach-cli/core').then((res) => {
 ## commander
 
 commander 中 command 所属的 action 中参数 optionValues 只能拿到自己的, 如果是在全局注册是 option 是在其 `parent._optionValues` 里面。有一种好的做法是放缓存里边儿。
+
+## npm init ? npm create ?
+
+`npm init egg xxx` 与 `npm init vite@latest` 为什么可以生成一个项目？
+
+其实是 npm 遇见 init 或 create 会去找 `create-xxx` 执行, 比如 `create-egg`, `create-vite`, 可以升级咱们的脚手架对这部分兼容
